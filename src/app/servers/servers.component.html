@@ -1,0 +1,10 @@
+<label>Server Name:</label>
+
+<input [(ngModel)]="serverName"
+       class="form-control"
+       autofocus>
+<button [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
+<!--<p [innerText]="allowNewServer"></p>-->
+<!--<p>{{serverCreationStatus}}</p>-->
+<p *ngIf="serverCreated">Server was created, the serve name is {{serverName}}</p>
+<app-server></app-server>
