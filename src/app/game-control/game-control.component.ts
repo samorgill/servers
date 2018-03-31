@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-game-control',
@@ -9,10 +9,13 @@ export class GameControlComponent {
 
   i = 0;
   intervalId;
-  numArray = [];
+
+  @Output() myEvent = new EventEmitter<number>();
 
   onStart() {
     this.intervalId = setInterval( () =>{
+
+      this.myEvent.emit(this.i);
       this.i++;
     }, 1000)
   }

@@ -7,6 +7,19 @@ import {AfterViewInit, Component, Output} from '@angular/core';
 })
 export class AppComponent {
 
+  even: boolean;
+  num: number;
+  oddNumbers: number[] = [];
+  evenNumbers: number[] = [];
+
+  incoming(num: number){
+
+    if(num % 2 === 0){
+      this.evenNumbers.push(num);
+    } else{
+      this.oddNumbers.push(num);
+    }
+  }
 
   // @Output() myEvent;
   //
