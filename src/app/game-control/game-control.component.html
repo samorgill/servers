@@ -1,3 +1,6 @@
-<p>
-  game-control works!
-</p>
+
+  <button class="btn btn-primary" (click)="onStart()">Start</button>
+  <button class="btn btn-primary" (click)="onStop()">Stop</button>
+  <app-even *ngIf="i % 2 == 0" [number]="i"></app-even>
+  <app-odd *ngIf="i % 2 == 1" [number]="i"></app-odd>
+

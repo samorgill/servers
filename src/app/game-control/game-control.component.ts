@@ -5,11 +5,20 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './game-control.component.html',
   styleUrls: ['./game-control.component.css']
 })
-export class GameControlComponent implements OnInit {
+export class GameControlComponent {
 
-  constructor() { }
+  i = 0;
+  intervalId;
+  numArray = [];
 
-  ngOnInit() {
+  onStart() {
+    this.intervalId = setInterval( () =>{
+      this.i++;
+    }, 1000)
+  }
+
+  onStop(){
+    clearInterval(this.intervalId);
   }
 
 }
