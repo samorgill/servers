@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {AfterViewInit, Component, Output} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,31 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+
+  @Output() myEvent;
+
+  serverElements = [{
+    type: 'blueprint',
+    name: 'Testserver',
+    content: 'This is my test server'
+  }];
+
+
+  onServerAdded(serverData: {serverName: string, serverContent: string}) {
+    this.serverElements.push({
+      type: 'server',
+      name: serverData.serverName,
+      content: serverData.serverContent
+    });
+  }
+
+  onBlueprintAdded(blueprintData: {serverName: string, serverContent: string}) {
+    this.serverElements.push({
+      type: 'server',
+      name: blueprintData.serverName,
+      content: blueprintData.serverContent
+    });
+  }
+
+
 }
