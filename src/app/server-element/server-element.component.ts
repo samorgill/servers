@@ -9,7 +9,6 @@ import {
   AfterContentInit,
   AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy, ViewChild, ElementRef, ContentChild
 } from '@angular/core';
-import {applyChanges} from '@angular/cli/lib/ast-tools';
 
 @Component({
   selector: 'app-server-element',

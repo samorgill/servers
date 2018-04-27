@@ -8,6 +8,7 @@ import {AfterViewInit, Component, Output} from '@angular/core';
 export class AppComponent {
 
   @Output() myEvent;
+  value = 5;
 
   serverElements = [{
     type: 'blueprint',
